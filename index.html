@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas e Ideas | Alta Tecnología en Apliques, Telas y Pines</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="img/Favicon.ico">
+    
+    <!-- FUENTES GOOGLE (Outfit y Plus Jakarta Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ICONOS FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- HOJA DE ESTILOS EXTERNA -->
+    <link rel="stylesheet" href="css/style.css">
+    <!---NOTA PARA CUALQUIER CAMBIO ES NECESARIO GUARDAR COPIA ORGINAL Y EXPERIMENTES CON UNA COPIA PARA REALIZAR MTTO-->
+    <!---RECORDAR QUE PARA MTTO DE ESTA PAGINA ESTA DECIFRADA EN ORDEN CON MENSAJES COMO ESTE APRECIADA(O) CUALQUIER CAMBIO ES NECEARIO GUARDAR EN CARPETA RAIZ-->
+    <!--DISEÑO Y CREACIÓN TECNOLOGOS EN MULTIEMDIA Y DESARROLLO WEB SENA GEORGE GOYENECHE Y LUISA RAIGOZA AÑO 2026 PROYECT MODELO -->
+</head>
+<body>
+
+    <!-- BARRA DE CARGA INICIAL (ESTILO CLARO VANGUARDISTA) -->
+    <div id="loading-screen" class="loading-overlay">
+        <div class="loader-content">
+            <svg class="brand-logo-svg" viewBox="0 0 200 200" width="85" height="85">
+                <defs>
+                    <linearGradient id="fiGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#C63183"/>
+                        <stop offset="50%" stop-color="#462C5A"/>
+                        <stop offset="100%" stop-color="#6BB7E3"/>
+                    </linearGradient>
+                </defs>
+                <path d="M40 120 C 30 70, 70 30, 120 40 L 150 70 L 120 100 L 90 70 Z" fill="url(#fiGradLight)"/>
+                <path d="M100 80 Q 140 100, 170 60 Q 185 45, 190 35" fill="none" stroke="url(#fiGradLight)" stroke-width="8" stroke-linecap="round"/>
+                <polygon points="175,30 195,35 185,55" fill="#6BB7E3"/>
+                <circle cx="150" cy="20" r="4" fill="#6BB7E3"/>
+                <circle cx="170" cy="15" r="3" fill="#C63183"/>
+                <circle cx="185" cy="25" r="2.5" fill="#6BB7E3"/>
+                <path d="M80 110 Q 100 150, 110 170 Q 120 150, 140 110 Z" fill="url(#fiGradLight)"/>
+            </svg>
+            <h2>Formas e Ideas</h2>
+            <p>Llevamos tus ideas a otro nivel...</p>
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CABECERA Y MENÚ RESPONSIVE (7 SECCIONES) -->
+    <header class="main-header">
+        <div class="logo-container">
+            <svg class="brand-logo-svg" viewBox="0 0 200 200" width="40" height="40">
+                <path d="M40 120 C 30 70, 70 30, 120 40 L 150 70 L 120 100 L 90 70 Z" fill="url(#fiGradLight)"/>
+            </svg>
+            <div class="brand-text">
+                <h1>Formas e Ideas</h1>
+                <span>Moda & Apliques Textiles</span>
+            </div>
+        </div>
+
+        <!-- BOTÓN HAMBURGUESA PARA MÓVILES -->
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#inicio" class="nav-link active"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="#quienes-somos" class="nav-link"><i class="fa-solid fa-users"></i> Quiénes Somos</a></li>
+                <li><a href="#servicios" class="nav-link"><i class="fa-solid fa-scissors"></i> Servicios</a></li>
+                <li><a href="#tendencias" class="nav-link"><i class="fa-solid fa-fire"></i> Tendencias</a></li>
+                <li><a href="#tu-modelo" class="nav-link highlight"><i class="fa-solid fa-wand-magic-sparkles"></i> Tu Modelo Aquí</a></li>
+                <li><a href="#contacto" class="nav-link"><i class="fa-solid fa-envelope"></i> Contacto</a></li>
+                <li><a href="#carrito" class="nav-link"><i class="fa-solid fa-bag-shopping"></i> Carrito (<span id="cartCount">0</span>)</a></li>
+            </ul>
+
+            <!-- REDES SOCIALES EN CABECERA -->
+            <div class="header-socials-inline">
+                <a href="https://www.tiktok.com" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wa.me/573001234567" target="_blank" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN 1: INICIO CON VIDEO DE FONDO HTML5 (institucional) -->
+    <section id="inicio" class="hero-video-section">
+        <div class="video-container-bg">
+            <video autoplay muted loop playsinline>
+                <source src="video/video_presentacion.mp4" type="video/mp4">
+                Tu navegador no soporta video en HTML5.
+            </video>
+            <div class="video-overlay-light"></div>
+        </div>
+
+        <div class="hero-content">
+            <span class="badge-tag">Innovación y Diseño 2026</span>
+            <h2>Llevamos Tus Ideas a Otro Nivel</h2>
+            <p>Especialistas en telas, apliques de alto relieve, corte láser y pines personalizados para marcas de moda en Colombia.</p>
+            <div class="hero-buttons">
+                <a href="#tu-modelo" class="btn-primary"><i class="fa-solid fa-shirt"></i> Explorar Colecciones</a>
+                <a href="personalizador_de_prendas_y_apliques_formas_e_ideas.html" class="btn-secondary-hero"><i class="fa-solid fa-cube"></i> Abrir Diseñador 360°</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Quiénes Somos</h2>
+            <p class="section-subtitle">Más de 20 años de experiencia transformando prendas básicas en piezas exclusivas.</p>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Técnicas Avanzadas</h3>
+                    <p>Desarrollamos apliques en caucho/PVC, vinilo 3D, corte láser de alta precisión y marquillas de silicona.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
+                    <h3>Diseños Propios y Telas</h3>
+                    <p>Soluciones integrales para talleres de modistería, marcas independientes y dotaciones corporativas.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Compromiso Digital</h3>
+                    <p>Migramos de catálogos en PDF a plataformas interactivas eficientes que reducen el impacto ambiental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: SERVICIOS -->
+    <section id="servicios" class="content-section bg-light-alt">
+        <div class="container">
+            <h2 class="section-title">Servicios, Telas y Apliques</h2>
+            <p class="section-subtitle">Acabados profesionales para destacar cualquier línea de ropa.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-badge">Láser</div>
+                    <div class="service-img" style="background-image: url('img/2image.jpg')"></div>
+                    <div class="service-body">
+                        <h3>Corte y Grabado Láser</h3>
+                        <p>Texturas precisas y calados perfectos sobre textiles.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-badge">PVC 3D</div>
+                    <div class="service-img" style="background-image: url('img/Logo.png')"></div>
+                    <div class="service-body">
+                        <h3>Apliques en Caucho</h3>
+                        <p>Alto relieve flexible de alta resistencia al lavado.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-badge">Proms</div>
+                    <div class="service-img" style="background-image: url('img/3image.jpg')"></div>
+                    <div class="service-body">
+                        <h3>Chaquetas de Grado</h3>
+                        <p>Parches y apliques personalizados para promociones y colegios.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-badge">Pines</div>
+                    <div class="service-img" style="background-image: url('img/Umbrella-Cosplay-Black-Leather-Jacket-1.jpg')"></div>
+                    <div class="service-body">
+                        <h3>Pines y Marquillas</h3>
+                        <p>Accesorios en silicona y caucho con tu identidad de marca.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 4: TENDENCIAS Y VIDEO DE YOUTUBE -->
+    <section id="tendencias" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Tendencias Digitales</h2>
+            <p class="section-subtitle">Innovación multimedia y colecciones de temporada.</p>
+            <div class="tendencias-flex">
+                <div class="tendencias-info">
+                    <h3>Creatividad Sin Límites en Cada Temporada</h3>
+                    <p>Descubre cómo adaptamos apliques temáticos para Halloween, Navidad y colecciones de moda urbana con acabados únicos.</p>
+                    <a href="https://www.youtube.com/embed/Kz-YsoEYOYk?si=2VrwXOwlvTWd6cy5&ampcontrols=0"  target="_blank" class="btn-youtube"><i class="fa-brands fa-youtube"></i> Ver Video en YouTube</a>
+                </div>
+                <div class="video-frame-container">
+                    <iframe src="https://www.youtube.com/embed/Kz-YsoEYOYk?si=4tAqmzIiRZracWV9" title="Tendencias Formas e Ideas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: "TU MODELO AQUÍ" (SLIDER INTERACTIVO CON TUS 4 IMÁGENES) -->
+    <section id="tu-modelo" class="content-section bg-light-alt">
+        <div class="container">
+            <h2 class="section-title">Tu Modelo Aquí</h2>
+            <p class="section-subtitle">Explora nuestras colecciones exclusivas y lanza el personalizador interactivo.</p>
+
+            <!-- CARRUSEL CON 1image, 3image, 5image y 6image -->
+            <div class="promo-slider-wrapper">
+                <div class="promo-slider" id="promoSlider">
+                    <!-- Slide 1: Modo Cine -->
+                    <div class="promo-slide active">
+                        <img src="img/1image.jpg" alt="Modo Cine - Formas e Ideas" class="promo-img">
+                        <div class="promo-caption">
+                            <h3>Estamos en Modo Cine</h3>
+                            <p>Personaliza tus prendas a precios muy accesibles.</p>
+                            <a href="customizer360.html" class="btn-slide-action">Personalizar Prenda</a>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Prom 2026 -->
+                    <div class="promo-slide">
+                        <img src="img/3image.jpg" alt="Chaquetas Prom 2026" class="promo-img">
+                        <div class="promo-caption">
+                            <h3>Prom 2027</h3>
+                            <p>Estilos unicos.</p>
+                            <a href="customizer360.html" class="btn-slide-action">Cotizar Chaqueta Prom</a>
+                        </div>
+                    </div>
+                    <!-- Slide 3: Temporadas Halloween y Navidad -->
+                    <div class="promo-slide">
+                        <img src="img/5image.jpg" alt="Halloween y Navidad 2026" class="promo-img">
+                        <div class="promo-caption">
+                            <h3>Temporada Halloween & Navidad 2026</h3>
+                            <p>Para cada época del año.</p>
+                            <a href="customizer360.html" class="btn-slide-action">Ver Catálogo Festivo</a>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Institucional SENA -->
+                    <div class="promo-slide">
+                        <img src="img/6image.jpg" alt="Formatos e Ideas SENA 2026" class="promo-img">
+                        <div class="promo-caption">
+                            <h3></h3>
+                            <p>SENA 2026</p>
+                            <a href="customizer360.html" class="btn-slide-action">Abrir Diseñador.</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTROLES DEL SLIDER -->
+                <button class="promo-nav prev" id="promoPrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="promo-nav next" id="promoNext"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="promo-dots" id="promoDots"></div>
+            </div>
+
+            <!-- BOTÓN ACCESO AL PERSONALIZADOR 360 -->
+            <div class="customizer-launch-card">
+                <div class="launch-info">
+                    <h3><i class="fa-solid fa-cube"></i> Entrar al Personalizador 360° / 3D</h3>
+                    <p>Sube tus logos PNG/JPG, personaliza camisetas, jeans, gorras y faldas, y obtén lo que necesitas.</p>
+                </div>
+                <a href="personalizador_de_prendas_y_apliques_formas_e_ideas.html" class="btn-launch-360">Iniciar Personalizador <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: CONTACTO Y REDES SOCIALES -->
+    <section id="contacto" class="content-section">
+        <div class="container">
+            <h2 class="section-title">Contacto & Redes Sociales</h2>
+            <p class="section-subtitle">Conéctate con nosotros en todas las plataformas digitales.</p>
+            <div class="contacto-grid">
+                <form class="contact-form-light" id="contactForm">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-user"></i> Nombre o Empresa</label>
+                        <input type="text" id="cName" placeholder="Tu nombre o marca" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                        <input type="email" id="cEmail" placeholder="tucorreo@dominio.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-message"></i> Mensaje o Consulta</label>
+                        <textarea id="cMsg" rows="4" placeholder="¿Qué tipo de aplique o diseño requieres?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit-form"><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</button>
+                </form>
+
+                <div class="contacto-directo-card">
+                    <h3>Atención Inmediata por WhatsApp</h3>
+                    <p>Evita demoras y habla directamente con nuestros asesores de producción.</p>
+                    <a href="https://wa.me/573001234567?text=Hola%20Formas%20e%20Ideas,%20deseo%20cotizar%20un%20proyecto." target="_blank" class="btn-wa-direct">
+                        <i class="fa-brands fa-whatsapp"></i> Chatear por WhatsApp
+                    </a>
+
+                    <div class="social-channels-box">
+                        <h4>Síguenos en Redes Sociales:</h4>
+                        <div class="social-icons-list">
+                            <a href="https://www.tiktok.com" target="_blank" class="social-btn tiktok"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+                            <a href="https://www.instagram.com" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                            <a href="https://www.facebook.com" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: CARRITO DE COMPRAS -->
+    <section id="carrito" class="content-section bg-light-alt">
+        <div class="container">
+            <h2 class="section-title">Carrito de Compras</h2>
+            <p class="section-subtitle">Tus prendas y configuraciones guardadas</p>
+            <div class="cart-box-light">
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-msg"><i class="fa-solid fa-basket-shopping"></i> Tu carrito está vacío. Configura tu prenda en <a href="personalizador_de_prendas_y_apliques_formas_e_ideas.html">Tu Modelo Aquí</a>.</p>
+                </div>
+                <div class="cart-summary">
+                    <h3>Resumen</h3>
+                    <div class="row"><span>Total Estimado:</span> <strong id="cartTotalText">$0 COP</strong></div>
+                    <a href="personalizador_de_prendas_y_apliques_formas_e_ideas.html" class="btn-primary" style="margin-top:15px; width:100%; text-align:center; display:block; text-decoration:none;">Personalizar Prenda</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <main-footer class="main-footer-light">
+        <div class="container">
+            <div class="footer-top">
+                <div class="brand-info">
+                    <h3>Formas e Ideas</h3>
+                    <p>Llevamos tus ideas a otro nivel | Cali - Colombia.</p>
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://wa.me/573001234567" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <strong>Formas e Ideas</strong>. Todos los derechos reservados | Proyecto SENA 2026.</p>
+            </div>
+        </div>
+    </main-footer>
+
+    <!-- SCRIPT EXTERNO -->
+    <script src="js/javascript.js"></script>
+</body>
+</html>

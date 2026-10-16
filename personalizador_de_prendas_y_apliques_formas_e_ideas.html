@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personalizador de Prendas y Apliques | Formas e Ideas</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Inter & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration with Formas e Ideas Brand Colors -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              magenta: '#C63183',
+              purple: '#462C5A',
+              cyan: '#6BB7E3',
+              darkBg: '#0B0813',
+              cardBg: 'rgba(23, 16, 38, 0.82)',
+              border: 'rgba(198, 49, 131, 0.25)'
+            }
+          },
+          boxShadow: {
+            'glow-magenta': '0 0 25px -5px rgba(198, 49, 131, 0.45)',
+            'glow-cyan': '0 0 25px -5px rgba(107, 183, 227, 0.4)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #0B0813;
+      background-image: 
+        radial-gradient(at 10% 15%, rgba(198, 49, 131, 0.18) 0px, transparent 45%),
+        radial-gradient(at 85% 85%, rgba(70, 44, 90, 0.25) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(107, 183, 227, 0.08) 0px, transparent 60%);
+      background-attachment: fixed;
+      color: #F1F5F9;
+    }
+
+    .glass-panel {
+      background: rgba(23, 16, 38, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .glass-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+    }
+    .glass-input:focus {
+      border-color: #C63183;
+      outline: none;
+      box-shadow: 0 0 12px rgba(198, 49, 131, 0.4);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(11, 8, 19, 0.9);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(198, 49, 131, 0.4);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #C63183;
+    }
+
+    canvas {
+      touch-action: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased text-slate-100 selection:bg-brand-magenta selection:text-white">
+
+  <header class="w-full glass-panel sticky top-0 z-50 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo & Name -->
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-magenta via-brand-purple to-brand-cyan p-0.5 shadow-glow-magenta flex-shrink-0">
+          <div class="w-full h-full bg-slate-950 rounded-[14px] flex items-center justify-center overflow-hidden">
+            <!-- Official Formas e Ideas 'FI' Vector Logo SVG -->
+            <svg class="w-8 h-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#C63183" />
+                  <stop offset="50%" stop-color="#462C5A" />
+                  <stop offset="100%" stop-color="#6BB7E3" />
+                </linearGradient>
+              </defs>
+              <!-- Lightbulb Base & F/I Monogram -->
+              <path d="M 50,15 C 32,15 20,28 20,45 C 20,58 28,68 35,76 L 35,84 L 65,84 L 65,76 C 72,68 80,58 80,45 C 80,28 68,15 50,15 Z" stroke="url(#fiGradient)" stroke-width="6" fill="none"/>
+              <path d="M 40,88 L 60,88 M 44,93 L 56,93" stroke="url(#fiGradient)" stroke-width="5" stroke-linecap="round"/>
+              <!-- Internal Leaf Feather -->
+              <path d="M 50,68 C 45,55 58,45 50,28 C 55,38 42,48 50,68 Z" fill="url(#fiGradient)"/>
+              <!-- Upward Arrow -->
+              <path d="M 58,35 L 78,18 M 78,18 L 68,18 M 78,18 L 78,28" stroke="url(#fiGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Sparkle Stars -->
+              <path d="M 82,10 L 84,14 L 88,16 L 84,18 L 82,22 L 80,18 L 76,16 L 80,14 Z" fill="#6BB7E3"/>
+              <path d="M 68,6 L 69,9 L 72,10 L 69,11 L 68,14 L 67,11 L 64,10 L 67,9 Z" fill="#C63183"/>
+            </svg>
+          </div>
+        </div>
+        <div>
+          <span class="font-display font-black text-xl tracking-wider text-white uppercase block leading-tight">
+            FORMAS <span class="text-brand-magenta">&</span> IDEAS
+          </span>
+          <span class="text-[11px] text-brand-cyan font-medium tracking-widest uppercase flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Personalizador de Prendas y Apliques 
+          </span>
+          <a href="index.html" class="bg-magenta hover:bg-pink-600 text-white px-4 py-2 rounded-full transition-colors shadow-md">Volver</a>
+        </div>
+      </div>
+
+      <!-- Quick Actions Header -->
+      <div class="flex items-center space-x-3">
+        <a href="https://wa.me/?text=Hola%20Formas%20e%20Ideas,%20quiero%20cotizar%20un%20pedido%20de%20prendas/apliques%20personalizados." 
+           target="_blank"
+           class="hidden sm:flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-xs font-semibold transition-all">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Asesoría Directa</span>
+        </a>
+        <button id="btn-open-quote-header" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-brand-magenta via-brand-purple to-brand-cyan hover:opacity-95 text-white font-semibold text-xs tracking-wide shadow-glow-magenta transition-all flex items-center gap-2">
+          <i class="fa-solid fa-file-invoice-dollar"></i>
+          <span class="hidden xs:inline">Ver Cotización</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+    <!-- LEFT COLUMN: Simplified Interactive Viewport (Vista Frente / Vista Atrás) -->
+    <section class="lg:col-span-7 flex flex-col gap-4 sticky top-24">
+      
+      <!-- Canvas Render Card -->
+      <div class="glass-panel rounded-3xl p-4 sm:p-6 relative overflow-hidden flex flex-col items-center justify-center border border-brand-border shadow-2xl">
+        
+        <!-- Viewport Controls Header Bar -->
+        <div class="w-full flex items-center justify-between mb-4 z-10">
+          <div class="flex items-center gap-2">
+            <span class="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-magenta/20 border border-brand-magenta/40 text-brand-magenta flex items-center gap-1.5">
+              <i class="fa-solid fa-camera"></i>
+              <span id="badge-view-mode">Vista Frontal</span>
+            </span>
+          </div>
+
+          <!-- Quick Action Controls -->
+          <div class="flex items-center gap-2">
+            <button id="btn-center-logo" class="px-3 py-1.5 rounded-xl bg-brand-cyan/20 border border-brand-cyan/40 text-brand-cyan hover:bg-brand-cyan/30 text-xs font-semibold transition-all flex items-center gap-1.5">
+              <i class="fa-solid fa-crosshairs"></i>
+              <span>Centrar Diseño</span>
+            </button>
+            <button id="btn-download-png" class="p-2 rounded-xl bg-white/5 hover:bg-white/15 text-slate-300 transition-all text-xs" title="Descargar PNG con Fondo Transparente">
+              <i class="fa-solid fa-download"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Canvas Container -->
+        <div class="relative w-full aspect-square max-w-[480px] flex items-c
+        
+        enter justify-center bg-slate-950/80 rounded-2xl border border-white/10 shadow-inner overflow-hidden" id="canvas-container">
+          <canvas id="productCanvas" class="w-full h-full block rounded-2xl"></canvas>
+        </div>
+
+        <!-- Simplified View Selector (Frente vs Atrás) -->
+        <div class="w-full mt-4 flex items-center justify-center gap-3">
+          <button id="btn-view-front" class="view-toggle-btn active flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-gradient-to-r from-brand-magenta to-brand-purple border-brand-magenta text-white shadow-glow-magenta">
+            <i class="fa-solid fa-shirt"></i>
+            <span>VISTA FRENTE</span>
+          </button>
+          
+          <button id="btn-view-back" class="view-toggle-btn flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10">
+            <i class="fa-solid fa-arrows-left-right"></i>
+            <span>VISTA ATRÁS</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Features Badges Bar -->
+      <div class="grid grid-cols-3 gap-3">
+        <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-8 h-8 rounded-xl bg-brand-magenta/20 flex items-center justify-center text-brand-magenta text-sm">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Alta Precision</div>
+            <div class="text-[10px] text-slate-400">Diseños Vectoriales</div>
+          </div>
+        </div>
+        <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-8 h-8 rounded-xl bg-brand-cyan/20 flex items-center justify-center text-brand-cyan text-sm">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">4 Prendas</div>
+            <div class="text-[10px] text-slate-400">Incluye Falda</div>
+          </div>
+        </div>
+        <div class="glass-panel p-3 rounded-2xl flex items-center gap-3 border border-white/5">
+          <div class="w-8 h-8 rounded-xl bg-brand-purple/40 flex items-center justify-center text-purple-300 text-sm">
+            <i class="fa-solid fa-calculator"></i>
+          </div>
+          <div>
+            <div class="text-xs font-bold text-white">Cotización COP</div>
+            <div class="text-[10px] text-slate-400">Precios Reales</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT COLUMN: Customization Options & Pricing Engine -->
+    <section class="lg:col-span-5 flex flex-col gap-5">
+
+      <!-- STEP 1: Product Selection (Camiseta, Gorra, Jean, Falda) -->
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl">
+        <label class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-brand-magenta text-white flex items-center justify-center text-[10px]">1</span>
+          Selecciona la Prenda
+        </label>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="product-selector-grid">
+          <button data-product="camiseta" class="product-card active p-3 rounded-2xl border flex flex-col items-center gap-1.5 transition-all bg-brand-magenta/20 border-brand-magenta text-white shadow-glow-magenta">
+            <i class="fa-solid fa-shirt text-lg"></i>
+            <span class="text-xs font-bold">Camiseta</span>
+            <span class="text-[10px] text-brand-cyan font-mono">$25.000</span>
+          </button>
+
+          <button data-product="gorra" class="product-card p-3 rounded-2xl border flex flex-col items-center gap-1.5 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10">
+            <i class="fa-solid fa-hat-cowboy text-lg"></i>
+            <span class="text-xs font-bold">Gorra</span>
+            <span class="text-[10px] text-brand-cyan font-mono">$22.000</span>
+          </button>
+
+          <button data-product="jean" class="product-card p-3 rounded-2xl border flex flex-col items-center gap-1.5 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10">
+            <i class="fa-solid fa-user-ninja text-lg"></i>
+            <span class="text-xs font-bold">Pantalón</span>
+            <span class="text-[10px] text-brand-cyan font-mono">$65.000</span>
+          </button>
+
+          <button data-product="falda" class="product-card p-3 rounded-2xl border flex flex-col items-center gap-1.5 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10">
+            <i class="fa-solid fa-person-dress text-lg"></i>
+            <span class="text-xs font-bold">Falda</span>
+            <span class="text-[10px] text-brand-cyan font-mono">$35.000</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: Color Selector -->
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-brand-magenta text-white flex items-center justify-center text-[10px]">2</span>
+            Color de la Prenda
+          </label>
+          <span id="current-color-label" class="text-xs font-semibold text-brand-cyan">Negro Azabache</span>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2.5" id="color-swatches-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div class="mt-3.5 flex items-center justify-between pt-3 border-t border-white/10">
+          <span class="text-xs text-slate-400">Color Personalizado (HEX):</span>
+          <div class="flex items-center gap-2">
+            <input type="color" id="custom-color-picker" value="#121212" class="w-7 h-7 rounded-lg cursor-pointer bg-transparent border-0 p-0">
+            <span class="text-xs font-mono text-slate-300" id="custom-color-hex">#121212</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3: Logo / Design File Upload & Manual Adjustment Sliders -->
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl">
+        <div class="flex items-center justify-between mb-3">
+          <label class="text-xs font-bold uppercase tracking-wider text-slate-300 flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-brand-magenta text-white flex items-center justify-center text-[10px]">3</span>
+            Tu Arte / Logo
+          </label>
+          <button id="btn-remove-logo" class="text-xs text-rose-400 hover:text-rose-300 font-medium hidden">
+            <i class="fa-solid fa-trash-can mr-1"></i> Quitar Logo
+          </button>
+        </div>
+
+        <!-- File Dropzone -->
+        <div id="drop-zone" class="border-2 border-dashed border-white/20 hover:border-brand-magenta/70 rounded-2xl p-4 text-center cursor-pointer transition-all bg-white/[0.02] hover:bg-white/[0.05] relative group">
+          <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" class="hidden">
+          
+          <div class="flex flex-col items-center justify-center gap-1.5 py-1" id="upload-prompt">
+            <div class="w-10 h-10 rounded-2xl bg-brand-magenta/10 text-brand-magenta group-hover:scale-110 flex items-center justify-center text-lg transition-transform">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
+            <div class="text-xs font-semibold text-slate-200">
+              Haz clic o arrastra tu logo (PNG, JPG, WEBP)
+            </div>
+            <div class="text-[10px] text-slate-400">
+              Soporta imágenes transparentes
+            </div>
+          </div>
+
+          <!-- File Upload Loaded Indicator -->
+          <div id="upload-status" class="hidden flex items-center justify-between bg-emerald-500/10 border border-emerald-500/30 p-2.5 rounded-xl text-left">
+            <div class="flex items-center gap-3 overflow-hidden">
+              <div class="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center overflow-hidden border border-white/10 flex-shrink-0">
+                <img id="logo-preview-thumb" src="" class="max-w-full max-h-full object-contain">
+              </div>
+              <div class="truncate">
+                <div id="logo-file-name" class="text-xs font-semibold text-emerald-400 truncate">logo_cargado.png</div>
+                <div class="text-[10px] text-slate-400">Listo para aplicar</div>
+              </div>
+            </div>
+            <span class="text-xs text-emerald-400"><i class="fa-solid fa-circle-check"></i></span>
+          </div>
+        </div>
+
+        <!-- Sample Logos Quick Picker -->
+        <div class="mt-3 flex items-center gap-2">
+          <span class="text-[11px] text-slate-400">Probar con:</span>
+          <button class="sample-logo-btn px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] text-slate-300 font-medium" data-sample="fi">
+            Logo Oficial FI
+          </button>
+          <button class="sample-logo-btn px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-[11px] text-slate-300 font-medium" data-sample="emblem">
+            Emblema Formas & Ideas
+          </button>
+        </div>
+
+        <!-- Position & Scale Adjustments Sliders -->
+        <div class="mt-4 space-y-3 pt-3 border-t border-white/10">
+          <div class="flex items-center justify-between text-xs text-slate-300">
+            <span>Escala (Tamaño):</span>
+            <input type="range" id="slider-scale" min="0.2" max="2.2" step="0.05" value="1.0" class="w-32 h-1 bg-slate-700 rounded appearance-none cursor-pointer accent-brand-magenta">
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-300">
+            <span>Posición Vertical (Y):</span>
+            <input type="range" id="slider-y" min="-120" max="120" value="0" class="w-32 h-1 bg-slate-700 rounded appearance-none cursor-pointer accent-brand-magenta">
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-300">
+            <span>Posición Horizontal (X):</span>
+            <input type="range" id="slider-x" min="-120" max="120" value="0" class="w-32 h-1 bg-slate-700 rounded appearance-none cursor-pointer accent-brand-magenta">
+          </div>
+          <div class="flex items-center justify-between text-xs text-slate-300">
+            <span>Rotación (°):</span>
+            <input type="range" id="slider-rot" min="-180" max="180" value="0" class="w-32 h-1 bg-slate-700 rounded appearance-none cursor-pointer accent-brand-magenta">
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: Technique Selection -->
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl">
+        <label class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-brand-magenta text-white flex items-center justify-center text-[10px]">4</span>
+          Técnica de Personalizado / Aplique
+        </label>
+
+        <div class="grid grid-cols-2 gap-2" id="technique-selector-grid">
+          <button data-tech="caucho" class="tech-card active p-2.5 rounded-2xl border text-left transition-all bg-brand-magenta/20 border-brand-magenta text-white">
+            <div class="text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-cubes text-brand-magenta"></i> Caucho / PVC
+            </div>
+            <div class="text-[10px] text-slate-300 mt-0.5">Efecto 3D de goma (+$8.000)</div>
+          </button>
+
+          <button data-tech="corte_laser" class="tech-card p-2.5 rounded-2xl border text-left transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white">
+            <div class="text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt text-brand-cyan"></i> Corte Láser
+            </div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Precisión de contorno (+$6.000)</div>
+          </button>
+
+          <button data-tech="vinilo_3d" class="tech-card p-2.5 rounded-2xl border text-left transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white">
+            <div class="text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-layer-group text-purple-400"></i> Vinilo Textil 3D
+            </div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Acabado satinado (+$5.000)</div>
+          </button>
+
+          <button data-tech="repujado" class="tech-card p-2.5 rounded-2xl border text-left transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white">
+            <div class="text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-stamp text-amber-400"></i> Repujado
+            </div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Relieve térmico (+$7.000)</div>
+          </button>
+
+          <button data-tech="silicona" class="tech-card p-2.5 rounded-2xl border text-left transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white col-span-2">
+            <div class="text-xs font-bold flex items-center gap-1.5">
+              <i class="fa-solid fa-droplet text-pink-400"></i> Silicona Alto Relieve
+            </div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Textura suave con volumen premium (+$9.000)</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 5: Pricing Engine & WhatsApp Order -->
+      <div class="glass-panel rounded-3xl p-5 border border-white/10 shadow-xl bg-gradient-to-b from-slate-900/90 to-slate-950">
+        <label class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3 flex items-center justify-between">
+          <span class="flex items-center gap-2">
+            <span class="w-5 h-5 rounded-full bg-brand-magenta text-white flex items-center justify-center text-[10px]">5</span>
+            Cantidad y Cotización
+          </span>
+          <span class="text-[10px] text-emerald-400 font-bold uppercase bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-md">COP ($ Pesos)</span>
+        </label>
+
+        <!-- Quantity Input Slider & Number Field -->
+        <div class="flex items-center gap-4 bg-white/5 p-3 rounded-2xl border border-white/10">
+          <div class="flex-1">
+            <span class="text-xs text-slate-400 block mb-1">Unidades del pedido:</span>
+            <input type="range" id="quantity-slider" min="1" max="200" value="12" class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer accent-brand-cyan">
+          </div>
+          <div class="w-20">
+            <input type="number" id="quantity-number" value="12" min="1" max="1000" class="w-full text-center font-mono font-bold text-lg rounded-xl glass-input py-1.5 border-brand-cyan/40">
+          </div>
+        </div>
+
+        <!-- Dynamic Volume Discount Badge -->
+        <div id="discount-badge" class="mt-2.5 text-[11px] text-brand-cyan font-semibold flex items-center gap-1.5">
+          <i class="fa-solid fa-tags"></i>
+          <span id="discount-text">Descuento aplicado: 10% por volumen (6 - 12 unids)</span>
+        </div>
+
+        <!-- Total Price Breakdown -->
+        <div class="mt-4 p-4 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between">
+          <div>
+            <div class="text-xs text-slate-400">Precio Unitario Estimado:</div>
+            <div id="unit-price-display" class="text-sm font-mono font-semibold text-slate-200">$29.700 COP</div>
+          </div>
+          <div class="text-right">
+            <div class="text-xs text-slate-400">Total Pedido (Sin IVA):</div>
+            <div id="total-price-display" class="text-xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-magenta via-purple-300 to-brand-cyan">
+              $356.400 COP
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Call Buttons -->
+        <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button id="btn-whatsapp-order" class="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-900/30 transition-all flex items-center justify-center gap-2">
+            <i class="fa-brands fa-whatsapp text-lg"></i>
+            <span>Enviar a WhatsApp</span>
+          </button>
+          
+          <button id="btn-quote-modal-trigger" class="w-full py-3.5 px-4 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-sm transition-all flex items-center justify-center gap-2">
+            <i class="fa-solid fa-list-check text-brand-cyan"></i>
+            <span>Resumen Detallado</span>
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- MODAL: Detailed Quote Breakdown -->
+  <div id="quote-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+    <div class="glass-panel w-full max-w-lg rounded-3xl p-6 border border-white/20 shadow-2xl transform scale-95 transition-transform duration-300" id="quote-modal-card">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between pb-4 border-b border-white/10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-magenta/20 flex items-center justify-center text-brand-magenta text-lg">
+            <i class="fa-solid fa-file-invoice"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white">Resumen de Cotización</h3>
+            <p class="text-xs text-slate-400">Formas e Ideas - Confección & Apliques</p>
+          </div>
+        </div>
+        <button id="btn-close-modal" class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body Specs Table -->
+      <div class="py-4 space-y-3 text-xs">
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Prenda Seleccionada:</span>
+          <span class="font-bold text-slate-200" id="modal-spec-product">Camiseta Tech Cotton</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Color Elegido:</span>
+          <span class="font-bold text-slate-200 flex items-center gap-1.5">
+            <span id="modal-spec-color-dot" class="w-3 h-3 rounded-full bg-black border border-white/20"></span>
+            <span id="modal-spec-color-name">Negro Azabache</span>
+          </span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Vista Actual:</span>
+          <span class="font-bold text-slate-200" id="modal-spec-view">Vista Frente</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Técnica / Aplique:</span>
+          <span class="font-bold text-brand-cyan" id="modal-spec-technique">Caucho / PVC 3D</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Cantidad Solicitada:</span>
+          <span class="font-bold text-slate-200" id="modal-spec-quantity">12 Unidades</span>
+        </div>
+        <div class="flex justify-between py-1.5 border-b border-white/5">
+          <span class="text-slate-400">Escala de Descuento:</span>
+          <span class="font-bold text-emerald-400" id="modal-spec-discount">10% OFF</span>
+        </div>
+
+        <div class="mt-4 p-3 rounded-xl bg-brand-magenta/10 border border-brand-magenta/30 flex justify-between items-center text-sm">
+          <span class="font-semibold text-slate-200">Total General Estimado:</span>
+          <span class="font-display font-black text-brand-magenta text-base" id="modal-spec-total">$356.400 COP</span>
+        </div>
+      </div>
+
+      <!-- Modal Footer Buttons -->
+      <div class="pt-3 border-t border-white/10 flex items-center justify-end gap-3">
+        <button id="btn-modal-close-secondary" class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs text-slate-300 font-semibold">
+          Cerrar
+        </button>
+        <button id="btn-modal-whatsapp" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 shadow-lg shadow-emerald-900/40">
+          <i class="fa-brands fa-whatsapp text-sm"></i>
+          <span>Enviar Pedido WhatsApp</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script>
+    /* Application State */
+    const state = {
+      product: 'camiseta', // 'camiseta', 'gorra', 'jean', 'falda'
+      view: 'front',       // 'front' or 'back'
+      color: '#121212',
+      colorName: 'Negro Azabache',
+      logoImage: null,
+      logoFileName: '',
+      // Separate transform state for front and back surfaces
+      logoFront: { scale: 1.0, x: 0, y: 0, rot: 0 },
+      logoBack: { scale: 1.0, x: 0, y: 0, rot: 0 },
+      technique: 'caucho', // 'caucho', 'corte_laser', 'vinilo_3d', 'repujado', 'silicona'
+      quantity: 12
+    };
+
+    // Color Swatches Palette
+    const COLOR_PALETTES = [
+      { name: 'Negro Azabache', hex: '#121212' },
+      { name: 'Blanco Puro', hex: '#F8FAFC' },
+      { name: 'Azul Navy', hex: '#1E293B' },
+      { name: 'Rojo Pasión', hex: '#991B1B' },
+      { name: 'Rosa Magenta', hex: '#C63183' },
+      { name: 'Azul Real', hex: '#1D4ED8' },
+      { name: 'Verde Militar', hex: '#3F6212' },
+      { name: 'Gris Claro', hex: '#94A3B8' }
+    ];
+
+    // Base Costs in COP ($)
+    const PRODUCT_BASE_COSTS = {
+      camiseta: 25000,
+      gorra: 22000,
+      jean: 65000,
+      falda: 35000
+    };
+
+    // Technique Add-On Costs in COP ($)
+    const TECHNIQUES = {
+      caucho: { name: 'Aplique Caucho / PVC', addOn: 8000 },
+      corte_laser: { name: 'Corte Láser', addOn: 6000 },
+      vinilo_3d: { name: 'Vinilo Textil 3D', addOn: 5000 },
+      repujado: { name: 'Repujado', addOn: 7000 },
+      silicona: { name: 'Silicona Alto Relieve', addOn: 9000 }
+    };
+
+    /* DOM References */
+    const canvas = document.getElementById('productCanvas');
+    const ctx = canvas.getContext('2d');
+    const canvasContainer = document.getElementById('canvas-container');
+
+    function resizeCanvas() {
+      const rect = canvasContainer.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      ctx.scale(dpr, dpr);
+      renderCanvas();
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+
+    function initColorSwatches() {
+      const container = document.getElementById('color-swatches-grid');
+      container.innerHTML = '';
+
+      COLOR_PALETTES.forEach((col, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `w-7 h-7 rounded-full border-2 transition-transform shadow-md ${idx === 0 ? 'border-brand-magenta scale-110' : 'border-white/20 hover:scale-105'}`;
+        btn.style.backgroundColor = col.hex;
+        btn.title = col.name;
+        btn.addEventListener('click', () => {
+          state.color = col.hex;
+          state.colorName = col.name;
+          document.getElementById('current-color-label').textContent = col.name;
+          document.getElementById('custom-color-picker').value = col.hex;
+          document.getElementById('custom-color-hex').textContent = col.hex.toUpperCase();
+
+          Array.from(container.children).forEach(c => {
+            c.classList.remove('border-brand-magenta', 'scale-110');
+            c.classList.add('border-white/20');
+          });
+          btn.classList.remove('border-white/20');
+          btn.classList.add('border-brand-magenta', 'scale-110');
+
+          renderCanvas();
+        });
+        container.appendChild(btn);
+      });
+    }
+
+    function renderCanvas() {
+      const rect = canvasContainer.getBoundingClientRect();
+      const w = rect.width;
+      const h = rect.height;
+
+      ctx.clearRect(0, 0, w, h);
+      ctx.save();
+
+      // Soft Radial Glow Background
+      const bgGlow = ctx.createRadialGradient(w/2, h/2, 40, w/2, h/2, w*0.65);
+      bgGlow.addColorStop(0, 'rgba(198, 49, 131, 0.08)');
+      bgGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = bgGlow;
+      ctx.fillRect(0, 0, w, h);
+
+      // Render Active Garment
+      if (state.product === 'camiseta') {
+        drawShirt(w, h);
+      } else if (state.product === 'gorra') {
+        drawCap(w, h);
+      } else if (state.product === 'jean') {
+        drawJeans(w, h);
+      } else if (state.product === 'falda') {
+        drawSkirt(w, h);
+      }
+
+      ctx.restore();
+    }
+
+    /* 1. CAMISETA (T-Shirt) Rendering */
+    function drawShirt(w, h) {
+      const cx = w / 2;
+      const cy = h / 2 + 10;
+      const isFront = state.view === 'front';
+
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Garment Shadow
+      ctx.save();
+      ctx.scale(1, 0.22);
+      const shadowGrad = ctx.createRadialGradient(0, h * 1.6, 10, 0, h * 1.6, 150);
+      shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0.6)');
+      shadowGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = shadowGrad;
+      ctx.beginPath();
+      ctx.arc(0, h * 1.6, 150, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      const bw = 120; // Body width
+      const bh = 175; // Body height
+      const sw = 55;  // Sleeve width
+
+      // Shirt Body Path
+      ctx.beginPath();
+      ctx.moveTo(-32, -bh/2);
+      ctx.quadraticCurveTo(0, -bh/2 + (isFront ? 24 : 10), 32, -bh/2);
+      ctx.lineTo(bw/2 + 30, -bh/2 + 25);
+      ctx.lineTo(bw/2 + sw + 10, -bh/2 + sw + 20);
+      ctx.lineTo(bw/2 + 25, -bh/2 + sw + 45);
+      ctx.lineTo(bw/2, bh/2);
+      ctx.quadraticCurveTo(0, bh/2 + 8, -bw/2, bh/2);
+      ctx.lineTo(-bw/2 - 25, -bh/2 + sw + 45);
+      ctx.lineTo(-bw/2 - sw - 10, -bh/2 + sw + 20);
+      ctx.lineTo(-bw/2 - 30, -bh/2 + 25);
+      ctx.closePath();
+
+      ctx.fillStyle = state.color;
+      ctx.fill();
+
+      // Shading Folds
+      const foldGrad = ctx.createLinearGradient(-bw/2, 0, bw/2, 0);
+      foldGrad.addColorStop(0, 'rgba(0, 0, 0, 0.35)');
+      foldGrad.addColorStop(0.2, 'rgba(255, 255, 255, 0.08)');
+      foldGrad.addColorStop(0.5, 'rgba(0, 0, 0, 0)');
+      foldGrad.addColorStop(0.8, 'rgba(255, 255, 255, 0.08)');
+      foldGrad.addColorStop(1, 'rgba(0, 0, 0, 0.4)');
+      ctx.fillStyle = foldGrad;
+      ctx.fill();
+
+      // Collar Rim
+      ctx.beginPath();
+      ctx.moveTo(-32, -bh/2);
+      ctx.quadraticCurveTo(0, -bh/2 + (isFront ? 24 : 10), 32, -bh/2);
+      ctx.quadraticCurveTo(0, -bh/2 + (isFront ? 30 : 14), -32, -bh/2);
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Applied Logo Rendering
+      drawAppliedLogo(cx, cy, isFront ? -bh/2 + 85 : -bh/2 + 75);
+
+      ctx.restore();
+    }
+
+    /* 2. GORRA (Cap) Rendering */
+    function drawCap(w, h) {
+      const cx = w / 2;
+      const cy = h / 2 + 15;
+      const isFront = state.view === 'front';
+
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Floor Shadow
+      ctx.save();
+      ctx.scale(1, 0.25);
+      const shadowGrad = ctx.createRadialGradient(0, h * 1.1, 10, 0, h * 1.1, 130);
+      shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0.6)');
+      shadowGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = shadowGrad;
+      ctx.beginPath();
+      ctx.arc(0, h * 1.1, 130, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      const capR = 95;
+
+      // Crown Dome Path
+      ctx.beginPath();
+      ctx.arc(0, -20, capR, Math.PI * 0.9, Math.PI * 0.1, false);
+      ctx.quadraticCurveTo(capR + 5, 20, capR - 10, 30);
+      ctx.lineTo(-capR + 10, 30);
+      ctx.quadraticCurveTo(-capR - 5, 20, -capR, -20);
+      ctx.closePath();
+
+      ctx.fillStyle = state.color;
+      ctx.fill();
+
+      // Crown Shading
+      const crownGrad = ctx.createRadialGradient(0, -40, 10, 0, 0, capR * 1.2);
+      crownGrad.addColorStop(0, 'rgba(255, 255, 255, 0.2)');
+      crownGrad.addColorStop(0.7, 'rgba(0, 0, 0, 0.1)');
+      crownGrad.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+      ctx.fillStyle = crownGrad;
+      ctx.fill();
+
+      // Seam Lines
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, -20 - capR);
+      ctx.lineTo(0, 30);
+      ctx.moveTo(0, -20 - capR);
+      ctx.quadraticCurveTo(capR * 0.5, -10, capR * 0.8, 25);
+      ctx.moveTo(0, -20 - capR);
+      ctx.quadraticCurveTo(-capR * 0.5, -10, -capR * 0.8, 25);
+      ctx.stroke();
+
+      // Top Button
+      ctx.beginPath();
+      ctx.arc(0, -20 - capR + 4, 8, 0, Math.PI * 2);
+      ctx.fillStyle = state.color;
+      ctx.fill();
+
+      if (isFront) {
+        // Front Visor / Bill
+        ctx.beginPath();
+        ctx.moveTo(-capR + 10, 28);
+        ctx.quadraticCurveTo(0, 72, capR - 10, 28);
+        ctx.quadraticCurveTo(0, 95, -capR + 10, 28);
+        ctx.closePath();
+
+        ctx.fillStyle = state.color;
+        ctx.fill();
+
+        // Visor Stitch Line
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+        ctx.setLineDash([4, 3]);
+        ctx.beginPath();
+        ctx.moveTo(-capR + 18, 32);
+        ctx.quadraticCurveTo(0, 78, capR - 18, 32);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else {
+        // Back Adjuster Hole Cutout
+        ctx.beginPath();
+        ctx.arc(0, 15, 30, Math.PI, 0, false);
+        ctx.lineTo(30, 28);
+        ctx.lineTo(-30, 28);
+        ctx.closePath();
+        ctx.fillStyle = '#0B0813';
+        ctx.fill();
+
+        // Snapback Strap
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+        ctx.fillRect(-28, 20, 56, 8);
+      }
+
+      // Applied Logo Rendering
+      drawAppliedLogo(cx, cy, isFront ? -35 : -40);
+
+      ctx.restore();
+    }
+
+    /* 3. JEAN / PANTALÓN Rendering */
+    function drawJeans(w, h) {
+      const cx = w / 2;
+      const cy = h / 2 + 10;
+      const isFront = state.view === 'front';
+
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Floor Shadow
+      ctx.save();
+      ctx.scale(1, 0.2);
+      const shadowGrad = ctx.createRadialGradient(0, h * 1.7, 10, 0, h * 1.7, 120);
+      shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0.6)');
+      shadowGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = shadowGrad;
+      ctx.beginPath();
+      ctx.arc(0, h * 1.7, 120, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      const waistbandW = 105;
+      const hipW = 118;
+      const totalH = 210;
+      const crotchY = 32;
+
+      // Pants Contour Path
+      ctx.beginPath();
+      ctx.moveTo(-waistbandW/2, -totalH/2);
+      ctx.lineTo(waistbandW/2, -totalH/2);
+      ctx.quadraticCurveTo(hipW/2, -totalH/4, hipW/2 - 10, crotchY);
+      ctx.lineTo(hipW/2 - 18, totalH/2);
+      ctx.lineTo(12, totalH/2);
+      ctx.lineTo(0, crotchY);
+      ctx.lineTo(-12, totalH/2);
+      ctx.lineTo(-hipW/2 + 18, totalH/2);
+      ctx.quadraticCurveTo(-hipW/2, -totalH/4, -waistbandW/2, -totalH/2);
+      ctx.closePath();
+
+      ctx.fillStyle = state.color;
+      ctx.fill();
+
+      // Denim Texture Shading
+      const denimGrad = ctx.createLinearGradient(-hipW/2, 0, hipW/2, 0);
+      denimGrad.addColorStop(0, 'rgba(0,0,0,0.4)');
+      denimGrad.addColorStop(0.25, 'rgba(255,255,255,0.06)');
+      denimGrad.addColorStop(0.5, 'rgba(0,0,0,0.2)');
+      denimGrad.addColorStop(0.75, 'rgba(255,255,255,0.06)');
+      denimGrad.addColorStop(1, 'rgba(0,0,0,0.4)');
+      ctx.fillStyle = denimGrad;
+      ctx.fill();
+
+      // Waistband & Thread Stitching
+      ctx.strokeStyle = '#D97706';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-waistbandW/2, -totalH/2 + 18);
+      ctx.lineTo(waistbandW/2, -totalH/2 + 18);
+      ctx.stroke();
+
+      if (isFront) {
+        // Zipper Fly & Front Pockets
+        ctx.beginPath();
+        ctx.moveTo(0, -totalH/2 + 18);
+        ctx.lineTo(0, crotchY - 12);
+        ctx.quadraticCurveTo(14, crotchY - 12, 14, crotchY - 28);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(0, -totalH/2 + 10, 4.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#CBD5E1';
+        ctx.fill();
+
+        // Curved Scoop Pockets
+        ctx.beginPath();
+        ctx.moveTo(-waistbandW/2 + 5, -totalH/2 + 18);
+        ctx.quadraticCurveTo(-waistbandW/2 + 35, -totalH/2 + 25, -waistbandW/2 + 30, -totalH/2 + 55);
+        ctx.moveTo(waistbandW/2 - 5, -totalH/2 + 18);
+        ctx.quadraticCurveTo(waistbandW/2 - 35, -totalH/2 + 25, waistbandW/2 - 30, -totalH/2 + 55);
+        ctx.stroke();
+      } else {
+        // Back Yoke & Patch Pockets
+        ctx.beginPath();
+        ctx.moveTo(-waistbandW/2, -totalH/2 + 30);
+        ctx.lineTo(0, -totalH/2 + 45);
+        ctx.lineTo(waistbandW/2, -totalH/2 + 30);
+        ctx.stroke();
+
+        ctx.fillStyle = '#92400E';
+        ctx.fillRect(waistbandW/2 - 32, -totalH/2 + 4, 25, 12);
+
+        // Back Pockets
+        [-25, 25].forEach(posX => {
+          ctx.beginPath();
+          ctx.moveTo(posX - 14, -totalH/2 + 50);
+          ctx.lineTo(posX + 14, -totalH/2 + 50);
+          ctx.lineTo(posX + 14, -totalH/2 + 85);
+          ctx.lineTo(posX, -totalH/2 + 98);
+          ctx.lineTo(posX - 14, -totalH/2 + 85);
+          ctx.closePath();
+          ctx.stroke();
+        });
+      }
+
+      // Applied Logo Rendering
+      drawAppliedLogo(cx, cy, isFront ? -20 : -20, isFront ? 22 : 25);
+
+      ctx.restore();
+    }
+
+    /* 4. FALDA (Skirt) Rendering */
+    function drawSkirt(w, h) {
+      const cx = w / 2;
+      const cy = h / 2 + 10;
+      const isFront = state.view === 'front';
+
+      ctx.save();
+      ctx.translate(cx, cy);
+
+      // Floor Shadow
+      ctx.save();
+      ctx.scale(1, 0.22);
+      const shadowGrad = ctx.createRadialGradient(0, h * 1.5, 10, 0, h * 1.5, 140);
+      shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0.6)');
+      shadowGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = shadowGrad;
+      ctx.beginPath();
+      ctx.arc(0, h * 1.5, 140, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      const waistW = 90;
+      const hemW = 165;
+      const skirtH = 170;
+
+      // Skirt Body Contour Path
+      ctx.beginPath();
+      ctx.moveTo(-waistW/2, -skirtH/2);
+      ctx.lineTo(waistW/2, -skirtH/2);
+      ctx.quadraticCurveTo(waistW/2 + 15, -skirtH/4, hemW/2, skirtH/2);
+      ctx.quadraticCurveTo(0, skirtH/2 + 12, -hemW/2, skirtH/2);
+      ctx.quadraticCurveTo(-waistW/2 - 15, -skirtH/4, -waistW/2, -skirtH/2);
+      ctx.closePath();
+
+      ctx.fillStyle = state.color;
+      ctx.fill();
+
+      // Fabric Shading & Pleat Folds
+      const skirtGrad = ctx.createLinearGradient(-hemW/2, 0, hemW/2, 0);
+      skirtGrad.addColorStop(0, 'rgba(0,0,0,0.35)');
+      skirtGrad.addColorStop(0.2, 'rgba(255,255,255,0.08)');
+      skirtGrad.addColorStop(0.5, 'rgba(0,0,0,0.15)');
+      skirtGrad.addColorStop(0.8, 'rgba(255,255,255,0.08)');
+      skirtGrad.addColorStop(1, 'rgba(0,0,0,0.35)');
+      ctx.fillStyle = skirtGrad;
+      ctx.fill();
+
+      // Waistband Belt
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(-waistW/2, -skirtH/2 + 20);
+      ctx.lineTo(waistW/2, -skirtH/2 + 20);
+      ctx.stroke();
+
+      // Pleat Lines
+      ctx.strokeStyle = 'rgba(0, 0, 0, 0.25)';
+      [-30, -10, 10, 30].forEach(x => {
+        ctx.beginPath();
+        ctx.moveTo(x * 0.6, -skirtH/2 + 20);
+        ctx.quadraticCurveTo(x * 0.9, 0, x * 1.5, skirtH/2 + 5);
+        ctx.stroke();
+      });
+
+      if (!isFront) {
+        // Back Zipper Seam Line
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.beginPath();
+        ctx.moveTo(0, -skirtH/2 + 20);
+        ctx.lineTo(0, skirtH/2 - 30);
+        ctx.stroke();
+      }
+
+      // Applied Logo Rendering
+      drawAppliedLogo(cx, cy, isFront ? -10 : -10);
+
+      ctx.restore();
+    }
+
+    /* Shared Logo Rendering Engine on Canvas */
+    function drawAppliedLogo(cx, cy, defaultOffsetY, defaultOffsetX = 0) {
+      if (!state.logoImage) return;
+
+      const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+
+      ctx.save();
+      const targetX = defaultOffsetX + transform.x;
+      const targetY = defaultOffsetY + transform.y;
+
+      ctx.translate(targetX, targetY);
+      ctx.rotate((transform.rot * Math.PI) / 180);
+      ctx.scale(transform.scale, transform.scale);
+
+      const baseWidth = 85;
+      const aspectRatio = state.logoImage.height / state.logoImage.width;
+      const baseHeight = baseWidth * aspectRatio;
+
+      ctx.drawImage(state.logoImage, -baseWidth/2, -baseHeight/2, baseWidth, baseHeight);
+      ctx.restore();
+    }
+
+    function setupFileUploader() {
+      const dropZone = document.getElementById('drop-zone');
+      const fileInput = document.getElementById('file-input');
+      const uploadStatus = document.getElementById('upload-status');
+      const uploadPrompt = document.getElementById('upload-prompt');
+      const logoPreviewThumb = document.getElementById('logo-preview-thumb');
+      const logoFileName = document.getElementById('logo-file-name');
+      const btnRemoveLogo = document.getElementById('btn-remove-logo');
+
+      dropZone.addEventListener('click', (e) => {
+        if (e.target.closest('#upload-status')) return;
+        fileInput.click();
+      });
+
+      ['dragenter', 'dragover'].forEach(evt => {
+        dropZone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.add('border-brand-magenta', 'bg-brand-magenta/10');
+        });
+      });
+
+      ['dragleave', 'drop'].forEach(evt => {
+        dropZone.addEventListener(evt, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropZone.classList.remove('border-brand-magenta', 'bg-brand-magenta/10');
+        });
+      });
+
+      dropZone.addEventListener('drop', (e) => {
+        const files = e.dataTransfer.files;
+        if (files && files.length > 0) handleFile(files[0]);
+      });
+
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files[0]) handleFile(e.target.files[0]);
+      });
+
+      function handleFile(file) {
+        if (!file.type.match('image.*')) {
+          alert('Por favor selecciona un archivo de imagen válido (PNG, JPG o WEBP).');
+          return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          const img = new Image();
+          img.onload = function() {
+            state.logoImage = img;
+            state.logoFileName = file.name;
+
+            logoPreviewThumb.src = evt.target.result;
+            logoFileName.textContent = file.name;
+            uploadPrompt.classList.add('hidden');
+            uploadStatus.classList.remove('hidden');
+            btnRemoveLogo.classList.remove('hidden');
+
+            renderCanvas();
+          };
+          img.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      btnRemoveLogo.addEventListener('click', () => {
+        state.logoImage = null;
+        state.logoFileName = '';
+        fileInput.value = '';
+        uploadPrompt.classList.remove('hidden');
+        uploadStatus.classList.add('hidden');
+        btnRemoveLogo.classList.add('hidden');
+        renderCanvas();
+      });
+
+      // Sample Logo Quick Buttons
+      document.querySelectorAll('.sample-logo-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          loadSampleLogo(btn.dataset.sample);
+        });
+      });
+    }
+
+    function loadSampleLogo(type) {
+      const sampleCanvas = document.createElement('canvas');
+      sampleCanvas.width = 300;
+      sampleCanvas.height = 300;
+      const sCtx = sampleCanvas.getContext('2d');
+
+      sCtx.clearRect(0, 0, 300, 300);
+
+      if (type === 'fi') {
+        // Draw FI Logo with gradient
+        const grad = sCtx.createLinearGradient(0, 0, 300, 300);
+        grad.addColorStop(0, '#C63183');
+        grad.addColorStop(0.5, '#462C5A');
+        grad.addColorStop(1, '#6BB7E3');
+
+        sCtx.lineWidth = 14;
+        sCtx.strokeStyle = grad;
+        sCtx.fillStyle = grad;
+
+        // Lightbulb
+        sCtx.beginPath();
+        sCtx.arc(150, 130, 85, Math.PI * 0.8, Math.PI * 0.2, false);
+        sCtx.lineTo(190, 220);
+        sCtx.lineTo(110, 220);
+        sCtx.closePath();
+        sCtx.stroke();
+
+        // Arrow
+        sCtx.beginPath();
+        sCtx.moveTo(170, 100);
+        sCtx.lineTo(240, 40);
+        sCtx.lineTo(210, 40);
+        sCtx.moveTo(240, 40);
+        sCtx.lineTo(240, 70);
+        sCtx.stroke();
+
+        // Stars
+        sCtx.font = 'bold 30px sans-serif';
+        sCtx.fillText('✦', 250, 30);
+        sCtx.fillText('✦', 220, 15);
+
+      } else {
+        // Emblem
+        sCtx.fillStyle = '#C63183';
+        sCtx.beginPath();
+        sCtx.arc(150, 150, 110, 0, Math.PI * 2);
+        sCtx.fill();
+
+        sCtx.fillStyle = '#0B0813';
+        sCtx.beginPath();
+        sCtx.arc(150, 150, 85, 0, Math.PI * 2);
+        sCtx.fill();
+
+        sCtx.fillStyle = '#6BB7E3';
+        sCtx.font = '900 36px Montserrat, sans-serif';
+        sCtx.textAlign = 'center';
+        sCtx.fillText('FORMAS', 150, 140);
+
+        sCtx.fillStyle = '#FFFFFF';
+        sCtx.font = '700 24px Montserrat, sans-serif';
+        sCtx.fillText('& IDEAS', 150, 175);
+      }
+
+      const img = new Image();
+      img.onload = function() {
+        state.logoImage = img;
+        state.logoFileName = type === 'fi' ? 'Logo_Oficial_FI.png' : 'Emblema_Formas_Ideas.png';
+
+        document.getElementById('logo-preview-thumb').src = sampleCanvas.toDataURL();
+        document.getElementById('logo-file-name').textContent = state.logoFileName;
+        document.getElementById('upload-prompt').classList.add('hidden');
+        document.getElementById('upload-status').classList.remove('hidden');
+        document.getElementById('btn-remove-logo').classList.remove('hidden');
+
+        renderCanvas();
+      };
+      img.src = sampleCanvas.toDataURL();
+    }
+
+    function updatePricingAndQuote() {
+      const basePrice = PRODUCT_BASE_COSTS[state.product];
+      const techPrice = TECHNIQUES[state.technique].addOn;
+      const rawUnitPrice = basePrice + techPrice;
+
+      let discountPercent = 0;
+      let tierLabel = 'Precio Base Regular (1 - 5 unids)';
+
+      if (state.quantity >= 51) {
+        discountPercent = 0.30;
+        tierLabel = 'Descuento x Mayor: 30% OFF (51+ unids)';
+      } else if (state.quantity >= 13) {
+        discountPercent = 0.20;
+        tierLabel = 'Descuento Vol. 2: 20% OFF (13 - 50 unids)';
+      } else if (state.quantity >= 6) {
+        discountPercent = 0.10;
+        tierLabel = 'Descuento Vol. 1: 10% OFF (6 - 12 unids)';
+      }
+
+      const discountedUnit = Math.round(rawUnitPrice * (1 - discountPercent));
+      const totalOrder = discountedUnit * state.quantity;
+
+      const formatCOP = (num) => '$' + num.toLocaleString('es-CO') + ' COP';
+
+      document.getElementById('unit-price-display').textContent = formatCOP(discountedUnit);
+      document.getElementById('total-price-display').textContent = formatCOP(totalOrder);
+      document.getElementById('discount-text').textContent = tierLabel;
+
+      // Update Detailed Modal
+      const prodNames = {
+        camiseta: 'Camiseta Tech Cotton',
+        gorra: 'Gorra Structured Pro',
+        jean: 'Pantalón / Jean Urban Fit',
+        falda: 'Falda Moda / Confección'
+      };
+
+      document.getElementById('modal-spec-product').textContent = prodNames[state.product];
+      document.getElementById('modal-spec-color-name').textContent = state.colorName;
+      document.getElementById('modal-spec-color-dot').style.backgroundColor = state.color;
+      document.getElementById('modal-spec-view').textContent = state.view === 'front' ? 'Vista Frente' : 'Vista Atrás';
+      document.getElementById('modal-spec-technique').textContent = TECHNIQUES[state.technique].name;
+      document.getElementById('modal-spec-quantity').textContent = `${state.quantity} Unidades`;
+      document.getElementById('modal-spec-discount').textContent = `${Math.round(discountPercent * 100)}% OFF`;
+      document.getElementById('modal-spec-total').textContent = formatCOP(totalOrder);
+    }
+
+    function syncSlidersWithState() {
+      const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+      document.getElementById('slider-scale').value = transform.scale;
+      document.getElementById('slider-y').value = transform.y;
+      document.getElementById('slider-x').value = transform.x;
+      document.getElementById('slider-rot').value = transform.rot;
+    }
+
+    function bindControlListeners() {
+      // View Switcher (Frente vs Atrás)
+      const btnFront = document.getElementById('btn-view-front');
+      const btnBack = document.getElementById('btn-view-back');
+      const badgeView = document.getElementById('badge-view-mode');
+
+      btnFront.addEventListener('click', () => {
+        state.view = 'front';
+        btnFront.className = 'view-toggle-btn active flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-gradient-to-r from-brand-magenta to-brand-purple border-brand-magenta text-white shadow-glow-magenta';
+        btnBack.className = 'view-toggle-btn flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10';
+        badgeView.textContent = 'Vista Frontal';
+        syncSlidersWithState();
+        renderCanvas();
+      });
+
+      btnBack.addEventListener('click', () => {
+        state.view = 'back';
+        btnBack.className = 'view-toggle-btn active flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-gradient-to-r from-brand-magenta to-brand-purple border-brand-magenta text-white shadow-glow-magenta';
+        btnFront.className = 'view-toggle-btn flex-1 max-w-[200px] py-3 rounded-2xl border font-bold text-xs flex items-center justify-center gap-2 transition-all bg-white/5 border-white/10 text-slate-400 hover:text-white hover:bg-white/10';
+        badgeView.textContent = 'Vista Trasera';
+        syncSlidersWithState();
+        renderCanvas();
+      });
+
+      // Centrar Diseño Button
+      document.getElementById('btn-center-logo').addEventListener('click', () => {
+        const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+        transform.x = 0;
+        transform.y = 0;
+        transform.scale = 1.0;
+        transform.rot = 0;
+        syncSlidersWithState();
+        renderCanvas();
+      });
+
+      // Product Selection Cards
+      document.querySelectorAll('.product-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.product-card').forEach(c => {
+            c.classList.remove('active', 'bg-brand-magenta/20', 'border-brand-magenta', 'text-white', 'shadow-glow-magenta');
+            c.classList.add('bg-white/5', 'border-white/10', 'text-slate-400');
+          });
+          card.classList.add('active', 'bg-brand-magenta/20', 'border-brand-magenta', 'text-white', 'shadow-glow-magenta');
+          card.classList.remove('bg-white/5', 'border-white/10', 'text-slate-400');
+
+          state.product = card.dataset.product;
+          updatePricingAndQuote();
+          renderCanvas();
+        });
+      });
+
+      // Custom Hex Color
+      document.getElementById('custom-color-picker').addEventListener('input', (e) => {
+        state.color = e.target.value;
+        state.colorName = 'Personalizado';
+        document.getElementById('current-color-label').textContent = 'Personalizado';
+        document.getElementById('custom-color-hex').textContent = e.target.value.toUpperCase();
+        renderCanvas();
+      });
+
+      // Sliders Bindings
+      document.getElementById('slider-scale').addEventListener('input', (e) => {
+        const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+        transform.scale = parseFloat(e.target.value);
+        renderCanvas();
+      });
+      document.getElementById('slider-y').addEventListener('input', (e) => {
+        const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+        transform.y = parseInt(e.target.value);
+        renderCanvas();
+      });
+      document.getElementById('slider-x').addEventListener('input', (e) => {
+        const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+        transform.x = parseInt(e.target.value);
+        renderCanvas();
+      });
+      document.getElementById('slider-rot').addEventListener('input', (e) => {
+        const transform = state.view === 'front' ? state.logoFront : state.logoBack;
+        transform.rot = parseInt(e.target.value);
+        renderCanvas();
+      });
+
+      // Technique Cards
+      document.querySelectorAll('.tech-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.tech-card').forEach(c => {
+            c.classList.remove('active', 'bg-brand-magenta/20', 'border-brand-magenta', 'text-white');
+            c.classList.add('bg-white/5', 'border-white/10', 'text-slate-400');
+          });
+          card.classList.add('active', 'bg-brand-magenta/20', 'border-brand-magenta', 'text-white');
+          card.classList.remove('bg-white/5', 'border-white/10', 'text-slate-400');
+
+          state.technique = card.dataset.tech;
+          updatePricingAndQuote();
+        });
+      });
+
+      // Quantity Synchronizer
+      const qSlider = document.getElementById('quantity-slider');
+      const qNumber = document.getElementById('quantity-number');
+
+      qSlider.addEventListener('input', (e) => {
+        state.quantity = parseInt(e.target.value) || 1;
+        qNumber.value = state.quantity;
+        updatePricingAndQuote();
+      });
+
+      qNumber.addEventListener('input', (e) => {
+        let val = parseInt(e.target.value) || 1;
+        if (val < 1) val = 1;
+        state.quantity = val;
+        qSlider.value = Math.min(val, 200);
+        updatePricingAndQuote();
+      });
+
+      // Modal Triggers
+      const modal = document.getElementById('quote-modal');
+      const modalCard = document.getElementById('quote-modal-card');
+
+      const openModal = () => {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        modalCard.classList.remove('scale-95');
+        modalCard.classList.add('scale-100');
+      };
+
+      const closeModal = () => {
+        modal.classList.add('opacity-0', 'pointer-events-none');
+        modalCard.classList.remove('scale-100');
+        modalCard.classList.add('scale-95');
+      };
+
+      document.getElementById('btn-open-quote-header').addEventListener('click', openModal);
+      document.getElementById('btn-quote-modal-trigger').addEventListener('click', openModal);
+      document.getElementById('btn-close-modal').addEventListener('click', closeModal);
+      document.getElementById('btn-modal-close-secondary').addEventListener('click', closeModal);
+
+      // WhatsApp Order Dispatch
+      const dispatchWhatsAppOrder = () => {
+        const prodNames = {
+          camiseta: 'Camiseta Tech Cotton',
+          gorra: 'Gorra Structured Pro',
+          jean: 'Pantalón / Jean Urban',
+          falda: 'Falda Confección Moda'
+        };
+        const totalCOP = document.getElementById('total-price-display').textContent;
+
+        const msg = `*SOLICITUD DE PEDIDO - FORMAS E IDEAS*%0A%0A` +
+                    `📌 *Prenda:* ${prodNames[state.product]}%0A` +
+                    `🎨 *Color:* ${state.colorName} (${state.color})%0A` +
+                    `👁️ *Vista Diseño:* ${state.view === 'front' ? 'Vista Frente' : 'Vista Atrás'}%0A` +
+                    `🛠️ *Técnica/Aplique:* ${TECHNIQUES[state.technique].name}%0A` +
+                    `📦 *Cantidad:* ${state.quantity} Unidades%0A` +
+                    `💰 *Total Estimado:* ${totalCOP}%0A%0A` +
+                    `Solicito confirmación de orden e instrucciones para envío de archivos.`;
+
+        window.open(`https://wa.me/?text=${msg}`, '_blank');
+      };
+
+      document.getElementById('btn-whatsapp-order').addEventListener('click', dispatchWhatsAppOrder);
+      document.getElementById('btn-modal-whatsapp').addEventListener('click', dispatchWhatsAppOrder);
+
+      // Download PNG Snapshot
+      document.getElementById('btn-download-png').addEventListener('click', () => {
+        const link = document.createElement('a');
+        link.download = `Formas_Ideas_${state.product}_${state.view}_${Date.now()}.png`;
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+      });
+    }
+
+    /* Application Initialization */
+    window.onload = function() {
+      initColorSwatches();
+      setupFileUploader();
+      bindControlListeners();
+      
+      resizeCanvas();
+      updatePricingAndQuote();
+
+      // Load Official FI Logo by default
+      loadSampleLogo('fi');
+    };
+  </script>
+
+</body>
+</html>
